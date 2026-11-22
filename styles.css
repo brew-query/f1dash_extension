@@ -1,0 +1,142 @@
+/* ==========================================================================
+   F1 Dashboard - 4-Factor Overtake Probability Score Styles
+   ========================================================================== */
+
+/* Base highlight applied to any driver row involved in an active battle */
+.f1-overtake-active {
+  position: relative !important;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+/* --------------------------------------------------------------------------
+   Tier 1: High / Imminent Overtake Threat (Score >= 70%) — F1 Purple
+   -------------------------------------------------------------------------- */
+.f1-overtake-tier-high {
+  background-color: rgba(168, 85, 247, 0.22) !important;
+}
+.f1-overtake-tier-high.f1-overtake-ahead {
+  box-shadow: inset 4px 0 0 0 #a855f7, inset 0 1px 0 0 rgba(168, 85, 247, 0.65) !important;
+}
+.f1-overtake-tier-high.f1-overtake-chaser {
+  box-shadow: inset 4px 0 0 0 #a855f7, inset 0 -1px 0 0 rgba(168, 85, 247, 0.65) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Tier 2: Medium / Active Overtake Battle (Score 45% - 69%)
+   -------------------------------------------------------------------------- */
+.f1-overtake-tier-med {
+  background-color: rgba(16, 185, 129, 0.13) !important;
+}
+.f1-overtake-tier-med.f1-overtake-ahead {
+  box-shadow: inset 3px 0 0 0 #34d399, inset 0 1px 0 0 rgba(52, 211, 153, 0.4) !important;
+}
+.f1-overtake-tier-med.f1-overtake-chaser {
+  box-shadow: inset 3px 0 0 0 #34d399, inset 0 -1px 0 0 rgba(52, 211, 153, 0.4) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Tier 3: Watch / Closing Battle (Score 25% - 44%, or approaching 1.0s-1.3s)
+   -------------------------------------------------------------------------- */
+.f1-overtake-tier-low {
+  background-color: rgba(245, 158, 11, 0.10) !important;
+}
+.f1-overtake-tier-low.f1-overtake-ahead {
+  box-shadow: inset 3px 0 0 0 #f59e0b, inset 0 1px 0 0 rgba(245, 158, 11, 0.35) !important;
+}
+.f1-overtake-tier-low.f1-overtake-chaser {
+  box-shadow: inset 3px 0 0 0 #f59e0b, inset 0 -1px 0 0 rgba(245, 158, 11, 0.35) !important;
+}
+
+/* Highlight the specific Interval (< 1.0s) text cell */
+.f1-overtake-interval-cell {
+  color: #34d399 !important;
+  font-weight: 700 !important;
+  text-shadow: 0 0 8px rgba(16, 185, 129, 0.45) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Inline Overtake Probability Score Badge (injected next to the interval)
+   -------------------------------------------------------------------------- */
+.f1-overtake-score-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 3px !important;
+  margin-left: 6px !important;
+  padding: 1px 6px !important;
+  border-radius: 9999px !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  font-size: 10px !important;
+  line-height: 1.3 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  vertical-align: middle !important;
+  white-space: nowrap !important;
+  cursor: help !important;
+  user-select: none !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35) !important;
+}
+
+.f1-overtake-score-badge.tier-high {
+  background: rgba(88, 28, 135, 0.92) !important;
+  color: #e9d5ff !important;
+  border: 1px solid #a855f7 !important;
+}
+
+.f1-overtake-score-badge.tier-med {
+  background: rgba(15, 23, 42, 0.9) !important;
+  color: #34d399 !important;
+  border: 1px solid rgba(52, 211, 153, 0.55) !important;
+}
+
+.f1-overtake-score-badge.tier-low {
+  background: rgba(15, 23, 42, 0.88) !important;
+  color: #fcd34d !important;
+  border: 1px solid rgba(245, 158, 11, 0.5) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Bottom-Right Floating Status Pill & Legend
+   -------------------------------------------------------------------------- */
+#f1-overtake-status-pill {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  color: #e2e8f0;
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  user-select: none;
+  backdrop-filter: blur(6px);
+}
+
+#f1-overtake-status-pill:hover {
+  border-color: #10b981;
+}
+
+#f1-overtake-status-pill .f1-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+
+#f1-overtake-status-pill.f1-disabled {
+  border-color: rgba(148, 163, 184, 0.3);
+  color: #94a3b8;
+}
+
+#f1-overtake-status-pill.f1-disabled .f1-dot {
+  background: #64748b;
+  box-shadow: none;
+}

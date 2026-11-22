@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "F1 Dashboard - Overtake Zone Highlighter (<1.0s)",
+  "version": "1.0.0",
+  "description": "Highlights pairs of drivers on app.formula1dashboard.com when the interval between them drops under 1.0 second (DRS / Overtake Zone).",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "f1-overtake-zone@local.dev",
+      "strict_min_version": "109.0"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://app.formula1dashboard.com/*",
+        "https://*.formula1dashboard.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
