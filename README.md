@@ -29,7 +29,7 @@ A lightweight, zero-dependency browser extension for [`app.formula1dashboard.com
 
 ## Project Structure & Where to Place Files
 
-Keep all three extension files together inside the same directory (e.g., `/home/c/projects/f1dash_extension/`):
+Keep all three extension files together inside the same directory (e.g., `/path/to/f1dash_extension/`):
 
 ```text
 f1dash_extension/
@@ -52,7 +52,7 @@ f1dash_extension/
    about:debugging#/runtime/this-firefox
    ```
 2. Click the **Load Temporary Add-on...** button near the top right.
-3. Navigate to your `/home/c/projects/f1dash_extension` folder and select **`manifest.json`**.
+3. Navigate to your `/path/to/f1dash_extension` folder and select **`manifest.json`**.
 4. Open [`https://app.formula1dashboard.com/live-timing/`](https://app.formula1dashboard.com/live-timing/) (or refresh the tab if it is already open).
 5. **Reloading after code edits:** If you modify `content.js` or `styles.css`, click **Reload** next to the extension on the `about:debugging` tab and refresh the F1 dashboard tab.
 
@@ -67,7 +67,7 @@ f1dash_extension/
    *(or `brave://extensions` / `edge://extensions`)*
 2. Turn **ON** the **Developer mode** toggle switch in the top-right corner.
 3. Click **Load unpacked** in the top-left corner.
-4. Select the `/home/c/projects/f1dash_extension` folder.
+4. Select the `/path/to/f1dash_extension` folder.
 5. Open [`https://app.formula1dashboard.com/live-timing/`](https://app.formula1dashboard.com/live-timing/).
 
 ---
@@ -80,8 +80,3 @@ f1dash_extension/
    * Whenever a driver drops under `+1.000s` behind the car ahead, both driver rows highlight in **Purple** (`>= 70%`), **Green** (`45%–69%`), or **Amber** (`< 45%`).
    * Hover over the **`🔥 76%`** / **`⚡ 58%`** badge next to the interval time to see *why* the score is high or low (gap points, closing rate, sector deltas, mini-sectors, and tire delta).
    * Click the bottom-right **`Overtake <1.0s`** pill anytime to temporarily disable or re-enable highlighting.
-<img width="524" height="80" alt="image" src="https://github.com/user-attachments/assets/769f4572-f5d2-4512-8be9-8d46dff30089" />
-<br>
-<br>
-<img width="350" height="1024" alt="image" src="https://github.com/user-attachments/assets/b52831db-ced4-4138-8a98-9c2c938a3447" />
-

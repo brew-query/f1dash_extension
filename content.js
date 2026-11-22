@@ -553,10 +553,22 @@
    */
   function updateStatusPill(battleCount, maxScore, waitingForBoard = false) {
     let pill = document.getElementById("f1-overtake-status-pill");
+    let labelEl = pill ? pill.querySelector(".f1-pill-label") : null;
+
     if (!pill) {
       pill = document.createElement("div");
       pill.id = "f1-overtake-status-pill";
       pill.title = "Click to toggle Overtake <1.0s Probability Scorer";
+
+      const dotEl = document.createElement("span");
+      dotEl.className = "f1-dot";
+
+      labelEl = document.createElement("span");
+      labelEl.className = "f1-pill-label";
+
+      pill.appendChild(dotEl);
+      pill.appendChild(labelEl);
+
       pill.addEventListener("click", () => {
         isEnabled = !isEnabled;
         pill.classList.toggle("f1-disabled", !isEnabled);
@@ -572,9 +584,8 @@
         ? "Overtake <1.0s: Waiting for timing..."
         : `Overtake <1.0s: ${battleCount} battle${battleCount === 1 ? "" : "s"}${peakText}`;
 
-    const desiredHTML = `<span class="f1-dot"></span><span>${label}</span>`;
-    if (pill.innerHTML !== desiredHTML) {
-      pill.innerHTML = desiredHTML;
+    if (labelEl && labelEl.textContent !== label) {
+      labelEl.textContent = label;
     }
   }
 

@@ -12,8 +12,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://app.formula1dashboard.com/*",
-        "https://*.formula1dashboard.com/*"
+        "https://app.formula1dashboard.com/*"
       ],
       "js": ["content.js"],
       "css": ["styles.css"],
