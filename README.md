@@ -80,3 +80,8 @@ f1dash_extension/
    * Whenever a driver drops under `+1.000s` behind the car ahead, both driver rows highlight in **Purple** (`>= 70%`), **Green** (`45%–69%`), or **Amber** (`< 45%`).
    * Hover over the **`🔥 76%`** / **`⚡ 58%`** badge next to the interval time to see *why* the score is high or low (gap points, closing rate, sector deltas, mini-sectors, and tire delta).
    * Click the bottom-right **`Overtake <1.0s`** pill anytime to temporarily disable or re-enable highlighting.
+<img width="524" height="80" alt="image" src="https://github.com/user-attachments/assets/769f4572-f5d2-4512-8be9-8d46dff30089" />
+<br>
+<br>
+<img width="350" height="1024" alt="image" src="https://github.com/user-attachments/assets/b52831db-ced4-4138-8a98-9c2c938a3447" />
+
